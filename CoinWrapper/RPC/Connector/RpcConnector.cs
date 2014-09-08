@@ -79,6 +79,7 @@ namespace BitcoinLib.RPC.Connector
             webRequest.ContentType = "application/json-rpc";
             webRequest.Method = "POST";
             webRequest.Timeout = _coinService.Parameters.RpcRequestTimeoutInSeconds * GlobalConstants.MillisecondsInASecond;
+            webRequest.KeepAlive = false;
             Byte[] byteArray = jsonRpcRequest.GetBytes();
             webRequest.ContentLength = byteArray.Length;
 
